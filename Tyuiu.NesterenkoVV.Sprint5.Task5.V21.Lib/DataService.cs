@@ -12,6 +12,7 @@ namespace Tyuiu.NesterenkoVV.Sprint5.Task5.V21.Lib
                 string line;
                 while ((line = reader.ReadLine()) != null)
                 {
+                    line = line.Replace(".", ",");
                     double x = double.Parse(line);
                     if (x % 2 == 0 && x>max)
                     {
