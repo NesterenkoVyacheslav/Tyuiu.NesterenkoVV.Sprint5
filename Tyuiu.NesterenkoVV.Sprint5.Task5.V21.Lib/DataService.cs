@@ -6,25 +6,32 @@ namespace Tyuiu.NesterenkoVV.Sprint5.Task5.V21.Lib
         public double LoadFromDataFile(string path)
         {
             double max = -10000;
-            double result = 1;
-            using (StreamReader reader = new StreamReader(path))
+
+            string list = File.ReadAllText(path);
+            string[] numbers = list.Split(new[] { ' ', '\n', '\r' });
+
+            foreach (string str in numbers)
             {
-                string line;
-                while ((line = reader.ReadLine()) != null)
+                double res = Math.Round(Convert.ToDouble(str.Replace('.', ',')), 3);
+                if (res % 2 == 0 && res > max)
                 {
-                    line = line.Replace(".", ",");
-                    double x = double.Parse(line);
-                    if (x % 2 == 0 && x>max)
-                    {
-                        max = x;
-                    }
+                    max = res;
                 }
             }
-            for (int i = 2; i <= max; i++)
+            
+            if (max < 0)
+            {
+                return 0;
+            }
+
+
+            double result = 1;
+            for (int i = 1; i <= max; i++)
             {
                 result *= i;
             }
             return result;
+
         }
     }
 }
