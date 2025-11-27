@@ -8,4 +8,8 @@
     <UseVSTest>true</UseVSTest>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Tyuiu.NesterenkoVV.Sprint5.Task6.V23.Lib\Tyuiu.NesterenkoVV.Sprint5.Task6.V23.Lib.csproj" />
+  </ItemGroup>
+
 </Project>
