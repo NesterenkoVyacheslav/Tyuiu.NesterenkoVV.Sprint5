@@ -19,7 +19,7 @@ namespace Tyuiu.NesterenkoVV.Sprint5.Task7.V1.Lib
             string newtext = "";
             foreach (char c in text) 
             {
-                if (!char.IsDigit(c)) 
+                if (!(char.IsDigit(c) || c=='.')) 
                 {
                 newtext += c;
                 }
